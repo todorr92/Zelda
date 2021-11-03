@@ -1,7 +1,7 @@
 kaboom({
   global: true,
   fullscreen: true,
-  scale: 2,
+  scale: 1,
   debug: true,
   clearColor: [0, 0, 1, 1],
 })
@@ -171,10 +171,6 @@ scene('game', ({ level, score }) => {
     s.move(s.dir * SLICER_SPEED, 0)
   })
 
-  collides('slicer', 'wall', (s) => {
-    s.dir = -s.dir
-  })
-
   action('skeletor', (s) => {
     s.move(0, s.dir * SKELETOR_SPEED)
     s.timer -= dt()
@@ -184,7 +180,7 @@ scene('game', ({ level, score }) => {
     }
   })
 
-  collides('skeletor', 'wall', (s) => {
+  collides('dangerous', 'wall', (s) => {
     s.dir = -s.dir
   })
 
