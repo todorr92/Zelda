@@ -74,7 +74,7 @@ scene('game', ({ level, score }) => {
     x: [sprite('bottom-left-wall'), solid(), 'wall'],
     y: [sprite('top-left-wall'), solid(), 'wall'],
     z: [sprite('bottom-right-wall'), solid(), 'wall'],
-    '%': [sprite('left-door'), solid(), 'door'],
+    '%': [sprite('left-door'), solid()],
     '^': [sprite('top-door'), 'next-level'],
     $: [sprite('stairs'), 'next-level'],
     '*': [sprite('slicer'), 'slicer', { dir: -1 }, 'dangerous'],
@@ -153,9 +153,6 @@ scene('game', ({ level, score }) => {
     spawnKaboom(player.pos.add(player.dir.scale(48)))
   })
 
-  player.collides('door', (d) => {
-    destroy(d)
-  })
 
   collides('kaboom', 'skeletor', (k,s) => {
     camShake(4)
