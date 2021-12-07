@@ -89,7 +89,7 @@ scene('game', ({ level, score }) => {
     '%': [sprite('left-door'), solid()],
     '^': [sprite('top-door'), 'next-level'],
     $: [sprite('stairs'), 'next-level'],
-    '*': [sprite('slicer'), 'slicer', { dir: -1 }, 'dangerous'],
+    '*': [sprite('slicer'), 'slicer', { dir: -1, timer: 0 }, 'dangerous'],
     '}': [sprite('skeletor'), 'dangerous', 'skeletor', { dir: -1, timer: 0 }],
     ')': [sprite('lanterns'), solid()],
     '(': [sprite('fire-pot'), solid()],
